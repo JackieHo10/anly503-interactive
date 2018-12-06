@@ -1,0 +1,13 @@
+name: car_features
+title: car_features
+username:
+account: mxiao
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 603550
+bundleId: 1744870
+url: https://mxiao.shinyapps.io/car_features/
+when: 1544075057.38477
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: server.zip
