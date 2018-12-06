@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+</style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Georgetown Analytics ANLY503</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/business-casual.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">ANLY503 Data Visualization Project</span>
+      <span class="site-heading-lower">An Exploration of Used Cars Market</span>
+    </h1>
+
+   <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Analytics 503</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item  px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="index.html">Introduction 
+              </a>
+            </li>
+            <div class="dropdown">
+                <button class="dropbtn"><li class="nav-item px-lg-4"><a class="nav-link text-uppercase text-expanded">Project 1 - EDA</a ></li> 
+                <i class="fa fa-caret-down"></i>
+                </button>
+              <div class="dropdown-content">
+                <a href="http://mxiao.georgetown.domains/Visualisation-Anly503/.html">Data&EDA</a > 
+                
+              </div>
+            </div>
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="price_volume.html">Price & Volume
+                  <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="geo.html">Geographical Difference</a>
+            </li>
+             <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="conclusion.html">Conclusion</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <section class="page-section about-heading">
+      <div class="container">
+       <!-- <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/carlogs.png" alt=""> -->
+             
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-upper">Section Summary</span>
+                  <span class="section-heading-lower">Sales Volume and Price of Used Cars</span>
+                </h2>
+                <p>The Used cars market is expanding these years. It is important to understand the sales volumes and price trend. This part combines various data features to visually explore the trends and patterns. With the help of effective visualization, it can give a comprehensive view of automobile sales from different perspectives.</p>
+
+                <p class="mb-0">This section answers the following subquestions:
+
+                  <ul>
+ 
+  <li>What is the volume distribution by car features, such as brands, certificated, bodystyle, registeration year?</li>
+  <li>Who are the main participants of the used cars market? </li>
+  <li>What is the price trend for cars in different generation </li>
+</ul>
+
+              </p>
+
+
+                 <p class="mb-0">Takeaways:
+<ol>
+
+<li> American brands are dominating the used cars market.</li>
+<li>  Most cars have been certified. SUV are most popular style.</li>
+<li> Majority of the sellers are dealers and most of them work with only one brand.</li>
+<li> Recent generation cars have higher price and the price distribution is more dispersed.</li>
+</ol>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">Heap Map</span>
+                  <span class="section-heading-lower">Popular Brands</span>
+                </h2>
+                <p class="mb-0"> 
+                  There are hundreds of manufacturers in the market. A straightforward question is who are dominating the market. First of all, the analysis choose the top sellers from US market and use heatmap (click for larger pic) to compare the sales of these top sellers brands.
+                </p>
+               <!--  <a href="img/make_amount.png", target="_blank">
+                <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/make_amount.png" height="250" width="250"></a>-->
+                
+            <center>  <div class='tableauPlaceholder' id='viz1543989651726' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;us&#47;used_car_market&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='used_car_market&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;us&#47;used_car_market&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1543989651726');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='85%';vizElement.style.height=(divElement.offsetWidth*0.5)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script></center>
+
+
+                <center><p class = "mb-0">Figure 2.1 Sale volume Distribution by Brand</p> </center>
+                <center><p class = "mb-0">There is no code for this visualization. It is generated by Tableau.</p></center>
+                <br>
+                <p>
+                  Generally, American brands are have the biggest share. Top 2 are both American brands, while the following 3 Japanese brands almost have the same sales volume as the top 2. An interesting observation is some luxury brands such as BMW and Mercedes-Benz are also very popular.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">Shiny App</span>
+                  <span class="section-heading-lower">Car Features</span>
+                </h2>
+                
+                <p class="mb-0"> 
+                  Apart from brands, this part also segmented the used cars market by car features, including whether certificated or not, which body styles, which years these cars were produced. By selecting the car features at right side, it gives a clear view of what kinds of cars there are in the market.
+                </p>
+                <!-- <a href="img/sunburst.png", target="_blank">
+                <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/sunburst.png" height="250" width="250"></a> -->
+               <center><iframe src="https://mxiao.shinyapps.io/car_features/" height="500" width="850"></iframe></center>
+                <center><p class = "mb-0">Figure 2.2 Distribution of Used Cars by selected features</p> </center>
+                <center><a href="https://github.com/minfrdata/anly503-interactive/tree/master/Codes/ShinyApp", target="_blank">code and data</a><p class = "mb-0">(Data is generated in the code.)</p></center>
+                <br>
+                <p>
+                  From the analysis above, if you choose the verified option, it will show over 90% of the cars are uncertificated. As for body style, the distribution of body style shows that SUV is the most popular style and Sedan come as the second one. American customers seem prefer the bigger cars. If you choose car age, you will know  which years were most cars registered in. The majority of used cars has been produced in the recent 5 years.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">Packed Bubble Chart & Network D3<br /></span>
+                  <span class="section-heading-lower">  Participants of the market</span>
+                </h2>
+
+                  <p class="mb-0"> 
+                  Packed Bubble Chart<br />
+The big blue bubble represents the number of dealers and the small orange one represents the number of individual sellers. There are 110,731 dealers and 12,817 individual sellers in the used cars market. Obviously, dealers are the major players.<br /><br />
+                  Network D3<br />
+The network graph was created in R. Since this is a network, we have the following important elements:<br />
+Nodes: dealers with IDs and used cars brands<br />
+These nodes are colored according to their out-degree.<br />
+Edges: the connection between a dealer and a brand<br /> 
+If there exists an edge, it means that the dealer is selling used cars of that specific brand.<br />
+Weights: the sales volume<br /> 
+We only keep the sales volume which is bigger than 10 to downsize the dataset. Bolder edge represents larger sales volume.<br />
+We can see that Ford, Toyota and Chevrolet are the top 3 popular brands in the market.<br /> 
+                </p>
+                <center><div class='tableauPlaceholder' id='viz1544046577458' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project503&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Project503&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project503&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1544046577458');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='95%';vizElement.style.height=(divElement.offsetWidth*0.5)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script></center>
+                 <center><p class = "mb-0">Figure 2.3 Distribution of 2-Type Sellers</p><p class = "mb-0">There is no code for the visualization. It is generated by Tableau.</p></center>
+                 <iframe src="D3_R.html" width="850" height="600"></iframe>
+                 <center><p class = "mb-0">Figure 2.4 Networks of Dealers and Brands  <a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Price_Volume/networks/networks.py",target="_blank">code</a></p></center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+        <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">Shiny App</span>
+
+                  <span class="section-heading-lower">Price with Customized Car Features</span>
+                </h2>
+
+                  <p class="mb-0"> 
+               From the previous analysis, it seems a little bit hard to get a full view of the car price since there are a wide range of brands, mode, bodystyles. To make it more clear and fun, the shiny app below can show the price distribution for any combination of selected features. You can costmize the features by yourself. </p>
+                </p>
+              <center><iframe src="https://mxiao.shinyapps.io/car_price/" height="650" width="850"></iframe></center>
+                <center><p class = "mb-0">Figure 2.5 The trade volume of cars produced in different years</p><a href="https://github.com/minfrdata/anly503-interactive/tree/master/Codes/ShinyApp", target="_blank">code</a> </center>
+
+                               <p>
+                The applicatioin is a flexible and dynamic way to explore the data.
+                Using the applicaton, you can exlplore the price according to your preference, which is a very flexible and dynamic automation tool.
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+        <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">Distribution Plot</span>
+
+                  <span class="section-heading-lower">Price Distribution by Year</span>
+                </h2>
+
+                  <p class="mb-0"> 
+               The analysis above gives an overall view of dynamic customized car price distribution. Surprisingly, the price distribution by year seems to have a certain pattern. To look into this specific problem, an overlaid price distribution graph by 4 different years is created.</p>
+                </p>
+              <center><iframe src="https://plot.ly/~qdhwp/222/price-distribution-by-year/#/" 
+              	height="650" width="850"></iframe></center>
+                <center><p class = "mb-0">Figure 2.6 Price Distribution by Year
+                </p><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Price_Volume/linechart/line.py", target="_blank">code</a> </center>
+
+                               <p>
+                From this graph, it is easy to find the used cars’ overall price is decreasing with the adding of the cars’ model year in recent 15 years. But we also have another interesting finding that the price range of used cars also becomes smaller with the adding of the cars’ model year in recent 15 years. We know the price range of new cars are similar in each year, so we can conclude that the depreciation rate of expensive cars is higher than the cheap cars made in the same year.
+
+
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+        <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">Distribution Plot</span>
+
+                  <span class="section-heading-lower">Price Distribution by Mileage</span>
+                </h2>
+
+                  <p class="mb-0"> 
+               The Dynamic Customized Car Price Distribution graph also shows the price distribution by mileage seems to have an interesting pattern. To look into this specific problem, an overlaid price distribution graph by 5 groups of mileage ranges is created.</p>
+                </p>
+              <center><iframe src="https://plot.ly/~zz186/34/price-distribution-by-mileage/#/" 
+              	height="650" width="850"></iframe></center>
+                <center><p class = "mb-0">Figure 2.7 Price Distribution by Mileage
+                </p><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Price_Volume/linechart/line.py", target="_blank">code</a> </center>
+
+                               <p>
+                From this graph we can easily find the overall price of used cars is decreasing with the increasing of the mileage. But we also find an interesting fact that the range of the used cars’ price is also closer with the increasing of the mileage. We know the price range of new cars are wide, but the range is closer and closer with the increasing of the mileage, which means the cars with a low mileage have a higher depreciation rate than the same car with a high mileage.
+
+
+
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+      <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">Distribution Plot</span>
+
+                  <span class="section-heading-lower">Price Distribution by Year</span>
+                </h2>
+
+                  <p class="mb-0"> 
+               Inspired by last two patterns, another research is done. An overlaid mileage distribution graph by 5 different years is created.</p>
+                </p>
+              <center><iframe src="https://plot.ly/~qdhwp/198/mileage-distribution-by-year/#/" 
+              	height="650" width="850"></iframe></center>
+                <center><p class = "mb-0">Figure 2.8 Mileage Distribution by Year
+                </p><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Price_Volume/linechart/line.py", target="_blank">code</a> </center>
+
+                               <p>
+                From this graph, we can easily find that the mileage of the used cars are increasing  with the adding of the cars’ made date. And we get another interesting finding that the range of the mileage is increasing with the adding of the model year, but the speed of the increasing is lower and lower. We can find the mileage ranges of 2002 and 1997 are pretty similar, from 50K miles to 200K miles. Almost all used cars on sale with an age over 15 years will have a mileage number in this range.
+
+
+
+
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--   <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">Word Cloud</span>
+
+                  <span class="section-heading-lower">Popular Models Word Cloud</span>
+                </h2>
+
+                  <p class="mb-0"> 
+               To have a intuitional view of the popular car models in American used car market, a Word Cloud graph of car models by its frequencies in dataset of Cars.com is created.</p>
+                </p>
+              <a href="img/wordcloud.png", target="_blank">
+                <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/wordcloud.png" height="250" width="250"> </a>
+                <center><p class = "mb-0">Figure 2.7 Popular Models Word Cloud
+                </p><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Price_Volume/linechart/line.py", target="_blank">code</a> </center>
+
+                               <p>
+                This is the wordcloud of popular models. We all know that American love pickups and the wordcloud truly shows that the top 2 most popular models are Ford-F-150 and Chevrolet-Silverado 1500. If we look up the original country of the popular cars, all car models we can see clearly in the word cloud are made in the United Sates and Japan. Popular Germany brands like VW don't have same influence on the American car market as they do in other countries’ market.
+
+
+
+
+
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+  -->
+
+
+
+
+
+
+
+
+
+
+
+<section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">3D Scatter Plot</span>
+
+                  <span class="section-heading-lower">3D Scatter Plot of Price, Body Style and Quantity </span>
+                </h2>
+
+                  <p class="mb-0"> 
+               Inspired by last two patterns, another research is done. An overlaid mileage distribution graph by 5 different years is created.</p>
+                </p>
+              <center><iframe src="3d-scatter-Ze.html" 
+                height="650" width="850"></iframe></center>
+                <center><p class = "mb-0">Figure 2.9 3D Scatter Plot of Price, Body Style and Quantity
+                </p><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Price_Volume/linechart/line.py", target="_blank">code</a> </center>
+
+                               <p>
+                There are lots of points with high quantity for each year appearing on the scatter plot above, which are the body styles, SUV, sedan, and crew cab pickup which is a kind of truck. They are the top three popular body styles in the used cars’ market, and the price of most of them is below $40,000. Additionally, the price of the body styles--convertible and coupe is relatively higher than other kinds of body style.
+
+
+
+
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0 small">Copyright &copy; Georgetown Analytics 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

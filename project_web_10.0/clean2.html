@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Georgetown Analytics ANLY503</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet" >
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/business-casual.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">ANLY503 Data Visualization Project</span>
+      <span class="site-heading-lower">An Exploration of Used Cars Market</span>
+    </h1>
+
+   <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Analytics 503</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item  px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="index.html">Introduction 
+              </a>
+            </li>
+            <div class="dropdown">
+            <button class="dropbtn"><li class="nav-item active px-lg-4"><a class="nav-link text-uppercase text-expanded">Project 1 - EDA</a ></li> 
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="clean2.html">Cars.com dataset</a> 
+                <a href="clean.html">Truecar.com dataset</a>
+            </div>
+            </div>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="price_volume.html">Price & Volume
+              </a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="geo.html">Geographical segmentation</a>
+            </li>
+             <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="conclusion.html">Conclusion</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+   <section class="page-section about-heading">
+      <div class="container">
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/aboutss.jpg" alt="">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-4">
+                 
+                  <span class="section-heading-lower">Cars.com Dataset Cleaning</span>
+                </h2>
+                <p>Cars.com dataset was scripted from Cars.com by zip code, which includes 19 features and about 270k records. It has more detailed features like “bodyStyle”, “certified”, “trim” than TrueCar.com dataset  — the second used car data set was used by this project. </p>
+                
+                <p>After dropping null values and duplications, the mileage outliers problem became the most frequent problems in this dataset.</p>
+                
+                <p>Mileage outliers’ problem includes two subproblems: 1. Mileage is too low. For example, many cars in this dataset have a Mileage lower than 1000 Miles. They are basically new cars, the dealers listed them as used cars may just because they want more customers to see their cars. 2. Mileage is too high. Most of this outliers due to transcription errors, since people wouldn’t record a higher Mileage than the actual Mileage of their cars which could lead to a lower price expectation. It is easy to deal with the low mileage outlier problem, all records with a mileage lower than 1000 are dropped, because those cars are considered new cars which will influence our research of used car market. But as for records with a abnormal high mileage, they can’t be simply deleted since there are many old mobiles do have such a high mileage. To solve this problem, we created a new feature “Mileage per Year”. By using this data, we exclude the influence of years to mileage. The value “Mileage per Year” only depends on people’s habits, some people drive more and some people drive less in a year, so it should have a normal distribution. Here is the distribution graph of value “Mileage per Year” before the mileage outliers were cleaned.</p>
+                
+                <a href="img/h1.png", target="_blank">
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/h1.png" width="250" height="250">
+                </a>
+                <center><p class = "mb-0">Figure 1.1.1 Distribution of Mileage/Year before Cleaning</p><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Cleaning/car.com/", target="_blank">code and data</a> </center>
+                
+                <p>It is obvious that many outliers exist in this graph. It is impossible for a car runs 500,000 a year. A function Q3+1.5*(Q3-Q1) was introduced to calculate the higher bound, which turned out about 20,000. After records with mileage outliers were dropped, the new graph is here.</p>
+                
+                <a href="img/h2.png", target="_blank">
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/h2.png" width="250" height="250">
+                </a>
+                <center><p class = "mb-0">Figure 1.1.2 Distribution of Mileage/Year after Cleaning</p><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Cleaning/car.com/", target="_blank">code and data</a> </center>
+                
+                
+                <p>From the graph, the distribution of “Mileage per Year” is basically a normal distribution as expected.</p>
+                
+                <p>The overall performance of the data cleaning process is shown in the pie chart.</p>
+                <a href="img/h3.png", target="_blank">
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/h3.png" width="250" height="250">
+                </a>
+                <center><p class = "mb-0">Figure 1.1.3 Cars.com's Data Issue Types</p><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Cleaning/car.com/", target="_blank">code and data</a> </center>
+                
+                <p class="mb-0">There were about 44% of the original data was cleaned. Around 5% of the whole dataset contains null values. Around 37% of the whole dataset are duplications, which is reasonable. Because this dataset was scripted by zip code from cars.com, many zip codes are locations close to each other, it is highly possible for the same car appears several times in the results of close zip codes when cars.com applied the best match algorithm. Besides, with the help of new adding feature “Mileage per Year”, there are around 1.5% of the whole records were cleaned, which is significant.</p>
+
+                <center><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Cleaning/car.com/scrip.py", target="_blank">Click to see the code for scrip</a> </center>
+
+
+                
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0 small">Copyright &copy; Your Website 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+
+</html>

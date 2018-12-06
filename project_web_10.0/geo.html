@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+iframe {
+       width: 622px; 
+       height: 522px;
+      } 
+
+</style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Georgetown Analytics ANLY503</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/business-casual.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">ANLY503 Data Visualization Project</span>
+      <span class="site-heading-lower">An Exploration of Used Cars Market</span>
+    </h1>
+
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Analytics 503</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="index.html">Introduction 
+              </a>
+            </li>
+            <div class="dropdown">
+                <button class="dropbtn"><li class="nav-item px-lg-4"><a class="nav-link text-uppercase text-expanded">Project 1 - EDA</a ></li> 
+                <i class="fa fa-caret-down"></i>
+                </button>
+              <div class="dropdown-content">
+                <a href="http://mxiao.georgetown.domains/Visualisation-Anly503/.html">Data&EDA</a > 
+                
+              </div>
+            </div>
+            <li class="nav-item  px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="price_volume.html">Price & Volume
+                  <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item acitve px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="geo.html">Geographical Difference</a>
+            </li>
+             <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="conclusion.html">Conclusion</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    
+    <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-upper">Section Summary</span>
+                </h2>
+                <p>In previous sections we've looked at the US used car market in terms of car features, price and sales volume. But we cannot get a grasp the whole picture without considering geographical factors. Is there a geographical difference in used car sales volume across the United States? We reveal some interesting answers here. Combining geographical features, we give some explanations for our findings as well.</p>
+
+                <p class="mb-0">In short, this section answers the following subquestions:
+
+                  <ul>
+                    <li>Is there a geographical difference across states in sales volume?
+                    </li>
+                    <li>
+                    What are the possible explanatory factors for the difference? 
+                  </li>
+                </ul>
+                  We use car data come from TrueCar.com and geographical data from Wikipedia and US census to answer these questions.<p>
+                  Now, let's dive into charts and numbers.
+              </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">Coropleth Map | Leaflet in R</span>
+                  <span class="section-heading-lower">Sales Volume Distribution and Popular Body Styles by State</span>
+                </h2>
+                <center><iframe src="igraphs/US_used_cars_map.html"></iframe></center>
+                <center><p class = "mb-0">Figure 3.1 Sale volume Distribution and Popular Body Style by State</p> </center>
+                <center><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/geographic_difference/coropleth_map/coropleth_map.r", target="_blank">code</a> <a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/geographic_difference/coropleth_map/Amount_state.csv", target="_blank">data</a></center>
+                <br>
+                <p class="mb-0"> 
+                  In the map, we can click the blue markers to explore the top three popular body styles in each state. 
+                  SUV style has the greatest sales volume in almost all states. Our data table shows that Hawaii, Maryland and New York are the only three states where Sedan rather than SUV is the most popular. But SUV still ranks top two in the three states. Sedan ranks the second most popular among most states. Crew Cab Pickup is usually the third most popular. Coupe as well as Sedan appears as the third most popular body style in a few states. Hatchback appears once as the third most popular in Hawaii. SUV, Sedan, Crew Cab Pickup, Coupe and Hatchback are the only five body styles that may appear as the top three popular. 
+                  <p>
+                  If we uncheck the box at the upper right corner, we can see the sales volume distribution across states more clearly.
+                  <p>
+                  A darker color indicates a greater sales volume of used cars. Three states, Texas, California and Florida outnumber other states with considerable used car sales volume over a hundred thousand. Their sales volumes are remarkably greater than the rest of the states.
+                  <p>
+                  What are the factors that account for the geographical difference in sales volume?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">Bubble Chart | Bokeh in Python</span>
+                  <span class="section-heading-lower">Do non auto commute percentage and population explain sales volume?</span>
+                </h2>
+                <center><iframe src="igraphs/SalesVolume_Population_n_NonAutoTrans.html"></iframe> </center>
+                
+                <center><p class = "mb-0">Figure 3.2 Sales Volume vs Non Auto Commute Percentage and Population</p></center>
+                <center><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/geographic_difference/bubble_chart/bubble_chart.py", target="_blank">code</a> 
+                <a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/geographic_difference/bubble_chart/", target="_blank">data</a></center>
+                <br>
+                <p class="mb-0"> 
+                  Here we have a hypothesis that the percentage of workers who use non auto transportation means to commute is negatively related with used car sales volume whereas population is positively related with sales volume. Non auto transportation means include public transportation, walk, taxicab, motorcycle, bicycle, work at home and other transportation means that does not involve using a private auto (taxicab excluded). Figure 3.2 above reveals if the hypothesis is true not false.
+                  <p>
+                  <p>
+                The vertical axis indicates the percentage of workers who use non auto transportation means to commute. The horizontal axis indicates the population of that state. The size of the bubble indicates the sales volume of that state. There are some widgets, such as wheel zoom in, box choose zoom in, crosshair (showing auxilliary lines perpendicular to the two axes) and hover (showing the label when hovering on the data point), on the right side of the figure. Hovering over the bubble we can see the name, population, non auto commute percentage and sales volume of a certain state.
+                <p>
+                  
+              </p>
+              <ul>
+                <li>
+                Does greater state population indicate a higher sales volume?
+                </li>
+                <li>
+                Yes. Imagining drawing vertical lines on the plot, one pattern is clear: In states with greater population, the sales volume of used cars is greater. The top three states with the greatest sales volume, Texas, California and Florida (by order) are the top three states with the greatest population as well.
+                </li>
+              </ul>
+                <ul>
+                <li> 
+                Do states with greater non auto transportation commute percentage tend to have a lower sales volume?
+                </li>
+                <li>
+                Mostly, no. Drawing horizontal lines along the vertical axis, we can see that non auto commute percentage can barely explain the variability in sales volumes across states, which is slightly surprising. But there is an interesting fact. Although California beats Texas in population, Texas has the greatest sales volume. One possible explanation may be that that California has a greater percentage of workers who use non auto transportation to commute than Texas. Note that New York has a population comparable to Florida, but its used car sales volume is tiny compared with Florida. Combining that over 40% of workers in New York use non auto ways to commute, New York's tiny sales volume is within expectation. Washington DC, whose non auto commute percentage is over 60%, appears at the upper left corner. Its sales volume is comparable to states with similar population.
+                </li>
+              </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper">Scatter Plot with a Regression Line | Bokeh in Python</span>
+                  <span class="section-heading-lower">Does GDP explain the sales volume?</span>
+                </h2>
+                <center><iframe src="igraphs/SalesVolume_GDP.html"></iframe></center>
+                <center><p class = "mb-0">Figure 3.3 Sales Volume vs GDP</p></center>
+                <center><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/geographic_difference/scatterplot/scatterplot.py", target="_blank">code</a> 
+                <a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/geographic_difference/scatterplot/mergedDF.csv", target="_blank">data</a></center>
+                <br>
+                <p> 
+                From Figure 3.3, states with a greater gross domestic product tend to have higher sales volume of used cars. The p-value for the regression is less than 0.05, and R-Squared is 0.74, which means that state GDP can predict 74% of the sales volume in that state.
+                </p>
+                <p> 
+                Also, note that GDP is positively related to population. No wonder that GDP can largely explain the sales volume since we've seen in Figure 3.2 that greater state population indicates a higher sales volume.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0 small">Copyright &copy; Georgetown Analytics 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

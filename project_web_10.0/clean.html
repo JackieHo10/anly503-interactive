@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Georgetown Analytics ANLY503</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet" >
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/business-casual.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">ANLY503 Data Visualization Project</span>
+      <span class="site-heading-lower">An Exploration of Used Cars Market</span>
+    </h1>
+
+   <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Analytics 503</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="index.html">Introduction 
+              </a>
+            </li>
+            <div class="dropdown">
+            <button class="dropbtn">
+              <li class="nav-item active px-lg-4">
+                <a class="nav-link text-uppercase text-expanded">Project 1 - EDA</a >
+              </li> 
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="clean2.html">Cars.com dataset</a >
+                <a href="clean.html">Truecar.com dataset</a>
+            </div>
+            </div>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="price_volume.html">Price & Volume
+              </a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="geo.html">Geographical Difference</a>
+            </li>
+             <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="conclusion.html">Conclusion</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+   <section class="page-section about-heading">
+      <div class="container">
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/aboutss.jpg" alt="">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-4">
+                 
+                  <span class="section-heading-lower">Truecar.com Dataset Cleaning</span>
+                </h2>
+                <p>There is another dataset has been mainly used, called TrueCar.com which was directly collected from Kaggle. The TrueCar.com dataset contains 8 features (“Price”, “Year”, “Mileage”, “City”, “State”, “Vin”, “Make”, “Model”) and about 1.2 million records. And each record has the information about the used car which is for sale. </p>
+                
+                <p>Firstly, we considered to deal with the null records and duplicate records in this dataset. And there is no any null values and duplications has been found. To make sure the geographic analysis could be conducted successfully, checking the consistency format of the feature “State” is necessary. We capitalized state abbreviation characters and deleted the extra space.</p>
+                
+                <p>The next data quality issue we focused on is outliers. We created a new feature (“Mileage per Year”) as in the last data cleaning part which can be used to filter unreasonable mileage records correctly. In this dataset, we used a boxplot to identify this kind of outliers. </p>
+                
+                <a href="img/ze1.png", target="_blank">
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/ze1.png" width="250" height="250">
+                </a>
+                <center><p class = "mb-0">Figure 1.2.1 Boxplot before Data Cleaning</p><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Cleaning/truecar/", target="_blank">code and data</a> </center>
+                
+                
+                <p>Obviously, there is an observation with extreme value in the boxplot above, and we can’t even see the box in the boxplot.  Just like previously mentioned, some cars probably listed with wrong mileage and some brand new cars listed in the used cars market. We have decided to remove these kinds of records because mileage is an important feature in the used cars market.</p>
+                
+                <a href="img/ze2.png", target="_blank">
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/ze2.png" width="250" height="250">
+                </a>
+                <center><p class = "mb-0">Figure 1.2.2 Boxplot after Data Cleaning</p><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Cleaning/truecar/", target="_blank">code and data</a> </center>
+
+                <p>According to the new boxplot above, which is the boxplot after data cleaning, it looks perfect now. </p>
+                
+                <a href="img/ze3.png", target="_blank">
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/ze3.png" width="250" height="250">
+                </a>
+                <center><p class = "mb-0">Figure 1.2.3 Mileage vs Price Scatterplot for Hyundai before Data Cleaning</p><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Cleaning/truecar/", target="_blank">code and data</a> </center>
+
+
+                <p>Then, we have encountered another data quality issue is noise value. According to the scatter plot above, which is the mileage versus price for Hyundai before data cleaning, there are a lot of points lie around $100,000. That is ridiculous because a brand new car of Hyundai usually between $15,000 to $40,000. The used cars should even lower. And we found the same issue for many brands, such as Toyota, Honda etc.</p>
+                <a href="img/ze4.png", target="_blank">
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/ze4.png" width="250" height="250">
+                </a>
+                <center><p class = "mb-0">Figure 1.2.4 Brands of Cars with a Price >= $99990</p><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Cleaning/truecar/", target="_blank">code and data</a> </center>
+
+
+                
+                <p>To discover which non-expensive car brands appear in the expensive car brands, setting 99990 as a boundary, and plotting the bar chart to get the frequency for different car brands over that price boundary. The records over the price boundary and with one of the brands in “Honda”, “Toyota”, “GMC”, “Kia”, “Subaru”, “Chrysler”, “Mercury”, “Lincoln”, “Hyundai”, “Jeep”, “Chevrolet”, “Scion” were removed.  In addition, we can’t remove the records of some car brands, Nissan, Ford and Lexus, because they do have expensive models. </p>
+                
+                <a href="img/ze5.png", target="_blank">
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/ze5.png" width="250" height="250">
+                </a> 
+
+                <center><p class = "mb-0">Figure 1.2.5 Mileage vs Price Scatterplot for Hyundai after Data Cleaning</p><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/Cleaning/truecar/", target="_blank">code and data</a> </center>
+
+                <p class="mb-0">The scatter plot above is Mileage Versus Price for Hyundai after data cleaning, it is a lot of better than before.</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0 small">Copyright &copy; Your Website 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

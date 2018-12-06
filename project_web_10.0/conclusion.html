@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+</style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Georgetown Analytics ANLY503</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/business-casual.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">ANLY503 Data Visualization Project</span>
+      <span class="site-heading-lower">An Exploration of Used Cars Market</span>
+    </h1>
+
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Analytics 503</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="index.html">Introduction 
+              </a>
+            </li>
+            <div class="dropdown">
+                <button class="dropbtn"><li class="nav-item px-lg-4"><a class="nav-link text-uppercase text-expanded">Project 1 - EDA</a ></li> 
+                <i class="fa fa-caret-down"></i>
+                </button>
+              <div class="dropdown-content">
+                <a href="http://mxiao.georgetown.domains/Visualisation-Anly503/.html">Data&EDA</a > 
+                
+              </div>
+            </div>
+            <li class="nav-item  px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="price_volume.html">Price & Volume
+                  <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item  px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="geo.html">Geographical Difference</a>
+            </li>
+             <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="conclusion.html">Conclusion</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    
+    
+   
+    <section class="page-section about-heading">
+      <div class="container">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-0">
+                  <span class="section-heading-upper"></span>
+                  <span class="section-heading-lower">Conclusion</span>
+                </h2>All the exploration and analysis have give a deep explaination of the used cars' market. The market is very active and has a wide type of cars and participants.  Visualization is powerful and straigthforward. For example, wordcloud below shows the popular modes in the market, and we can easily tell which cars are the most common mode. 
+
+
+                <a href="img/wordcloud.png", target="_blank">
+                <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/wordcloud.png" alt="" height="850" width="600"></a>
+                <center><p class = "mb-0">Figure 4.1  WordCloud for the popluar car model</p><a href="https://github.com/minfrdata/ANLY503Project1/blob/master/code/TypicalCars/", target="_blank">code and data</a> </center>
+                
+      
+                
+                
+                 <p class="mb-0"> We have used various visualization tools(both static and interactive) to analyze many aspects of the market. You can find various interesting vis and results from the previous analysis. 
+                Here, we summarize key insights:</p>
+
+<p class="mb-0">
+<ol>
+
+<li> American brands are dominating the used cars market.</li>
+<li>  Most cars have not been certified. SUV is most popular body style.</li>
+<li> Majority of the sellers are dealers and most of them work with only one brand.</li>
+<li> The depreciation of cars is very fast at the early stage and will slow down after certain age and miles.
+ Recent generation cars have higher price and the price distribution is more concentrated.</li>
+ <li>There are differences in sales volume across states. Texas, California and Florida rank as top one, two and three respectively in sales volume.</li>
+<li>States with greater population or GDP tend to have higher sales volume.</li>
+<li>The percentage of workers who use non auto commute transportation means can barely explain the difference in sales volume, but can partly explain the difference between New York and Florida, Texas and California.</li>
+
+</ol>
+                </p>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0 small">Copyright &copy; Georgetown Analytics 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
