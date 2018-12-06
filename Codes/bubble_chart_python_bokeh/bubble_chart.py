@@ -4,7 +4,7 @@ import numpy as np
 from bokeh.plotting import figure, output_file, show
 from bokeh.models import ColumnDataSource, HoverTool
 
-tc_merged = pd.read_csv('../project_1/plots_codes&data/mergedDF.csv')
+tc_merged = pd.read_csv('mergedDF.csv')
 
 output_file("SalesVolume_Population_n_NonAutoTrans.html", title="SalesVolume vs Populationn & NonAutoTrans")
 
