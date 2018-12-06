@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>SalesVolume vs GDP</title>
+      
+      
+        
+          
+        <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.2.min.css" type="text/css" />
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.2.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="69971b84-526d-45a3-b2aa-2bcd03968daa"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1122">
+          {"36c91bb4-e648-4d88-b0c2-345ab061e23c":{"roots":{"references":[{"attributes":{"data_source":{"id":"1001","type":"ColumnDataSource"},"glyph":{"id":"1047","type":"Line"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1048","type":"Line"},"selection_glyph":null,"view":{"id":"1050","type":"CDSView"}},"id":"1049","type":"GlyphRenderer"},{"attributes":{"callback":null,"tooltips":[["State","@states"],["GDP","@gdp{0,0}"],["Sales Volume","@salesVolume"]]},"id":"1056","type":"HoverTool"},{"attributes":{"line_alpha":0.1,"line_color":"#1f77b4","x":{"field":"rx"},"y":{"field":"ry"}},"id":"1048","type":"Line"},{"attributes":{"source":{"id":"1001","type":"ColumnDataSource"}},"id":"1055","type":"CDSView"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1023","type":"CrosshairTool"},{"id":"1024","type":"PanTool"},{"id":"1025","type":"WheelZoomTool"},{"id":"1026","type":"ZoomInTool"},{"id":"1027","type":"ZoomOutTool"},{"id":"1028","type":"BoxZoomTool"},{"id":"1029","type":"UndoTool"},{"id":"1030","type":"RedoTool"},{"id":"1031","type":"ResetTool"},{"id":"1032","type":"SaveTool"},{"id":"1056","type":"HoverTool"}]},"id":"1033","type":"Toolbar"},{"attributes":{},"id":"1023","type":"CrosshairTool"},{"attributes":{},"id":"1011","type":"LinearScale"},{"attributes":{},"id":"1024","type":"PanTool"},{"attributes":{"align":"center","plot":null,"text":"Used Car Sales Volume vs State GDP","text_font":"arial","text_font_size":{"value":"14pt"}},"id":"1002","type":"Title"},{"attributes":{},"id":"1009","type":"LinearScale"},{"attributes":{},"id":"1059","type":"BasicTickFormatter"},{"attributes":{},"id":"1025","type":"WheelZoomTool"},{"attributes":{"callback":null},"id":"1007","type":"DataRange1d"},{"attributes":{},"id":"1061","type":"BasicTickFormatter"},{"attributes":{},"id":"1026","type":"ZoomInTool"},{"attributes":{"callback":null},"id":"1005","type":"DataRange1d"},{"attributes":{},"id":"1064","type":"UnionRenderers"},{"attributes":{},"id":"1027","type":"ZoomOutTool"},{"attributes":{},"id":"1065","type":"Selection"},{"attributes":{"overlay":{"id":"1038","type":"BoxAnnotation"}},"id":"1028","type":"BoxZoomTool"},{"attributes":{},"id":"1029","type":"UndoTool"},{"attributes":{"fill_alpha":{"value":0.6},"fill_color":{"value":"#70a6ff"},"line_color":{"value":null},"size":{"units":"screen","value":6},"x":{"field":"gdp"},"y":{"field":"salesDivby100"}},"id":"1052","type":"Scatter"},{"attributes":{},"id":"1030","type":"RedoTool"},{"attributes":{"callback":null,"data":{"gdp":{"__ndarray__":"ZmZmZmZeakCF61G4HmVKQJqZmZmZ/XNAexSuR+E6X0DNzMzMzHWlQAAAAAAAbHVA4XoUrkdNcEDD9Shcj2JSQAAAAAAAQGBAH4XrUbg6jkBmZmZmZlKBQClcj8L1CFZAKVyPwvX4UUB7FK5H4aKJQFK4HoXrcXZAZmZmZmbGZ0CamZmZmbljQLgehetRUGlAuB6F61HIbkAzMzMzM7NOQK5H4XoUmnhAmpmZmZl7gEAAAAAAAJB/QPYoXI/C8XVAPQrXo3DtW0BmZmZmZg5zQM3MzMzMDEhA4XoUrkdxXkBSuB6F64ljQOF6FK5HIVRAmpmZmZl9gkBmZmZmZkZYQGZmZmZmLJhAZmZmZmbSgEAfhetRuL5LQNejcD0KSYRAhetRuB6lZ0DXo3A9CodtQM3MzMzMgIdAexSuR+G6TUAzMzMzM2NrQNejcD0K90hA7FG4HoWTdUDNzMzMzICaQClcj8L1sGRAmpmZmZkZQEDD9Shcj8p/QJqZmZmZpX9AMzMzMzMzU0ApXI/C9UB0QIXrUbgeJURA","dtype":"float64","shape":[51]},"rx":[210.95,52.79,319.85,124.92,2746.9,342.75,260.83,73.54,130.0,967.34,554.3,88.14,71.89,820.36,359.12,190.2,157.8,202.51,246.26,61.4,393.63,527.45,505.0,351.11,111.71,304.9,48.1,121.77,156.31,80.52,591.7,97.1,1547.1,538.3,55.49,649.13,189.16,236.22,752.1,59.46,219.1,49.93,345.22,1696.2,165.53,32.2,508.66,506.35,76.8,324.06,40.29],"ry":[149.05928335648395,69.41265713808511,203.8994300129308,105.73607108050487,1426.1196131399217,215.43147187181629,174.1779841390695,79.8619963770316,108.29427075924454,529.9641367033144,321.9643738476779,87.21430254033851,79.03108506405513,455.94756410859844,223.6751192617707,138.60994411753745,122.29386742636319,144.80904609495582,166.84078545418035,73.7485034439805,241.053755268327,308.44318066378816,297.13775098116895,219.6414225242304,99.08374475055388,196.37086993475006,67.05085467877625,104.1497858466407,121.54352933161474,83.37700302222902,340.79836360847787,91.72640276110769,821.9211929525487,313.9070520248758,70.77233019568297,369.7191131261981,138.0862181990553,161.78481601037203,421.57301488206895,72.77155317296574,153.16348165997377,67.97241086225924,216.6753209282114,897.0053606887859,126.18656103200445,59.043891117366655,298.9808633481349,297.8175875099679,81.50367569842751,206.01951281755558,63.117874464020964],"salesDivby100":{"__ndarray__":"H4XrUbg2ZkCPwvUoXE82QFK4HoXrFXRAexSuR+H6VkCF61G4HoKRQDMzMzMz93NA9ihcj8I9YkAzMzMzMxNCQI/C9Shcj9I/AAAAAAB0kEBmZmZmZvCAQJqZmZmZeUJACtejcD0KSECPwvUoXLWAQArXo3A9amxApHA9CtdDUECPwvUoXM9aQB+F61G4VmhA4XoUrkfBW0AzMzMzM3M5QClcj8L1MG9AZmZmZmYKcEApXI/C9WhiQOF6FK5HSWNAj8L1KFx/VEB7FK5H4TpsQPYoXI/CNTlAj8L1KFxfUUCuR+F6FD5ZQK5H4XoUHlRAMzMzMzNbd0AAAAAAABBRQPYoXI/CLXdAXI/C9Sj8f0D2KFyPwrUxQM3MzMzM1HRA4XoUrkfpYUA9CtejcPVhQJqZmZmZuXhApHA9CtfjOEBxPQrXoxBhQLgehetROC9AmpmZmZm9cEDD9ShcjzGVQB+F61G49mFApHA9CtejLUAK16NwPSp+QFyPwvUoSHRAuB6F61F4M0AK16NwPbJjQOF6FK5H4SJA","dtype":"float64","shape":[51]},"salesVolume":[17771,2231,32137,9192,112053,31945,14593,3615,29,105300,54205,3695,4808,53467,22732,6506,10724,19471,11102,2545,24953,25665,14728,15429,8199,22584,2521,6949,10097,8047,37370,6825,37086,51176,1771,33330,14329,14367,39560,2489,13652,1561,26785,135639,14371,1482,48264,32451,1947,15757,944],"states":["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","District of Columbia","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]},"selected":{"id":"1065","type":"Selection"},"selection_policy":{"id":"1064","type":"UnionRenderers"}},"id":"1001","type":"ColumnDataSource"},{"attributes":{},"id":"1031","type":"ResetTool"},{"attributes":{"axis_label":"GDP in Billion Current U.S. Dollars","formatter":{"id":"1059","type":"BasicTickFormatter"},"plot":{"id":"1003","subtype":"Figure","type":"Plot"},"ticker":{"id":"1014","type":"BasicTicker"}},"id":"1013","type":"LinearAxis"},{"attributes":{},"id":"1032","type":"SaveTool"},{"attributes":{},"id":"1014","type":"BasicTicker"},{"attributes":{"plot":{"id":"1003","subtype":"Figure","type":"Plot"},"ticker":{"id":"1014","type":"BasicTicker"}},"id":"1017","type":"Grid"},{"attributes":{"below":[{"id":"1013","type":"LinearAxis"}],"left":[{"id":"1018","type":"LinearAxis"}],"plot_height":500,"renderers":[{"id":"1013","type":"LinearAxis"},{"id":"1017","type":"Grid"},{"id":"1018","type":"LinearAxis"},{"id":"1022","type":"Grid"},{"id":"1038","type":"BoxAnnotation"},{"id":"1049","type":"GlyphRenderer"},{"id":"1054","type":"GlyphRenderer"}],"title":{"id":"1002","type":"Title"},"toolbar":{"id":"1033","type":"Toolbar"},"x_range":{"id":"1005","type":"DataRange1d"},"x_scale":{"id":"1009","type":"LinearScale"},"y_range":{"id":"1007","type":"DataRange1d"},"y_scale":{"id":"1011","type":"LinearScale"}},"id":"1003","subtype":"Figure","type":"Plot"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"1038","type":"BoxAnnotation"},{"attributes":{"axis_label":"Used Car Sales Volume in Hundred","formatter":{"id":"1061","type":"BasicTickFormatter"},"plot":{"id":"1003","subtype":"Figure","type":"Plot"},"ticker":{"id":"1019","type":"BasicTicker"}},"id":"1018","type":"LinearAxis"},{"attributes":{"source":{"id":"1001","type":"ColumnDataSource"}},"id":"1050","type":"CDSView"},{"attributes":{"line_color":"#2858a8","x":{"field":"rx"},"y":{"field":"ry"}},"id":"1047","type":"Line"},{"attributes":{},"id":"1019","type":"BasicTicker"},{"attributes":{"data_source":{"id":"1001","type":"ColumnDataSource"},"glyph":{"id":"1052","type":"Scatter"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1053","type":"Scatter"},"selection_glyph":null,"view":{"id":"1055","type":"CDSView"}},"id":"1054","type":"GlyphRenderer"},{"attributes":{"dimension":1,"plot":{"id":"1003","subtype":"Figure","type":"Plot"},"ticker":{"id":"1019","type":"BasicTicker"}},"id":"1022","type":"Grid"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":6},"x":{"field":"gdp"},"y":{"field":"salesDivby100"}},"id":"1053","type":"Scatter"}],"root_ids":["1003"]},"title":"Bokeh Application","version":"1.0.2"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1122').textContent;
+                  var render_items = [{"docid":"36c91bb4-e648-4d88-b0c2-345ab061e23c","roots":{"1003":"69971b84-526d-45a3-b2aa-2bcd03968daa"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
